@@ -15,9 +15,7 @@ AI国际象棋对弈系统
 使用方法
 
 1. 克隆项目到本地
-```bash
-git clone https://github.com/yourusername/your-repo-name.git
-```
+
 
 2. 配置API密钥
    - 在 `chess.js` 和 `gomoku.js` 中找到 API 配置部分
