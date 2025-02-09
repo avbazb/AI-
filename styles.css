@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* 游戏区域 */
+.game-area {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    margin: 20px 0;
+}
+
+/* 游戏容器 */
+.game-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.game-container.active {
+    display: block;
+    opacity: 1;
+}
+
+/* 游戏控制区 */
+.game-controls {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.control-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.control-btn:hover {
+    background-color: #45a049;
+}
+
+.status {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.thinking {
+    color: #666;
+    font-style: italic;
+    display: none;
+}
+
+/* 游戏选择器 */
+.game-selector {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.selector-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.selector-btn.active {
+    background-color: #2196F3;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* 国际象棋样式 */
+#chessboard {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    border: 2px solid #333;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.square.white {
+    background-color: #f0d9b5;
+}
+
+.square.black {
+    background-color: #b58863;
+}
+
+.piece {
+    font-size: 40px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+}
+
+/* 五子棋样式 */
+#gomokuboard {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: #DEB887;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    gap: 1px;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.gomoku-cell {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gomoku-cell::before, .gomoku-cell::after {
+    content: '';
+    position: absolute;
+    background-color: #000;
+    z-index: 0;
+}
+
+.gomoku-cell::before {
+    width: calc(100% + 2px);
+    height: 1px;
+    top: 50%;
+    left: -1px;
+    transform: translateY(-50%);
+}
+
+.gomoku-cell::after {
+    width: 1px;
+    height: calc(100% + 2px);
+    left: 50%;
+    top: -1px;
+    transform: translateX(-50%);
+}
+
+.gomoku-piece {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.gomoku-piece.black {
+    background-color: #000;
+}
+
+.gomoku-piece.white {
+    background-color: #fff;
+    border: 1px solid #000;
+}

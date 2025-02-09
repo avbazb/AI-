@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI对弈系统</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI对弈系统</h1>
+        
+        <!-- 游戏选择器 -->
+        <div class="game-selector">
+            <button id="chessSelector" class="selector-btn active">国际象棋</button>
+            <button id="gomokuSelector" class="selector-btn">五子棋</button>
+        </div>
+        
+        <!-- 游戏状态和控制 -->
+        <div class="game-controls">
+            <button id="startGame" class="control-btn">开始新游戏</button>
+            <div id="gameStatus" class="status">游戏状态: 等待开始</div>
+            <div id="thinking" class="thinking">AI思考中...</div>
+        </div>
+        
+        <!-- 游戏区域 -->
+        <div class="game-area">
+            <!-- 国际象棋游戏 -->
+            <div id="chessGame" class="game-container active">
+                <div id="chessboard"></div>
+            </div>
+            
+            <!-- 五子棋游戏 -->
+            <div id="gomokuGame" class="game-container">
+                <div id="gomokuboard"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="chess.js"></script>
+    <script src="gomoku.js"></script>
+    <script src="main.js"></script>
+</body>
+</html> 
